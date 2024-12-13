@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Market Analysis</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+            letter-spacing: 2px;
+            font-weight: bold;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 0 0 15px #00ffcc;
+            letter-spacing: 1px;
+        }
+
+        .button {
+            padding: 15px 25px;
+            background-color: transparent;
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 2px solid #00ffcc;
+            border-radius: 50px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+
+        .button:hover {
+            color: #000;
+            background-color: #00ffcc;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        /* Particle animation */
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #00ffcc;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ffcc;
+            animation: move 5s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(100vh) translateX(100vw);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffcc;
+            }
+            100% {
+                text-shadow: 0 0 30px #00ffff, 0 0 50px #00ffcc, 0 0 70px #00ff66;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Market Analysis</h1>
+        <p>Click below to upload your file for analysis:</p>
+        <a href="{% url 'upload_file' %}" class="button">Go to Upload</a>
+    </div>
+    <footer>
+        &copy; 2024 Market Analysis | Designed with &#10084;
+    </footer>
+
+    <div id="particles"></div>
+
+    <script>
+        // Generate particles dynamically
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 5 + 2 + 's';
+            particleContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
