@@ -162,13 +162,4 @@ A sample Excel file with the following columns:
 2. Implement advanced visualizations.
 3. Enable multi-user access and file history tracking.
 
----
-
-##
-
----
-
-## Acknowledgments
-
-Special thanks to the Django and Pandas communities for their excellent documentation and support.
-
+hope you will like it
