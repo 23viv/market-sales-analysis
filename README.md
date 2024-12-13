@@ -1,4 +1,4 @@
-# Market Analysis Application
+# Market Analysis Application📊🛍️
 
 ## Overview
 
